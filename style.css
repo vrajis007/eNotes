@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background-color: #2C313C;
 }
 
 .container {
@@ -12,12 +13,9 @@
 
 /* #region Header CSS */
 .header {
-    margin-left: 20px;
-}
-
-.header {
+    padding-left: 20px;
     flex-basis: 10%;
-    padding: 5px;
+    background-color: #2C313C;
 }
 
 
@@ -38,21 +36,48 @@
     border: 2px solid black;
 }
 
-.tabs {
+/* #endregion Header CSS End */
+
+/* #region Tabs CSS */
+
+.tabs-container {
     margin-top: 10px;
+    padding-left: 10px;
+    display: flex;
+    background-color: #282C34;
+    /* background-color: whitesmoke; */
 }
 
-.tabs button {
-    padding: 10px;
-    margin-right: 10px;
-    width: 70px;
-    border: none;
-    background-color: grey;
+.tabs-container .new-btn {
+    background-color: #282C34;
     color: white;
+    padding: 0px;
+    width: 35px;
+    font-size: 25px;
+    border: 1px solid black;
     cursor: pointer;
 }
 
-/* #endregion Header CSS End */
+
+.tabs button {
+    padding: 10px;
+    border: none;
+    background-color: #282C34;
+    border-right: 1px solid black;
+    color: white;
+    letter-spacing: 1px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.tabs button:hover {
+    /* background-color: #21252B; */
+    /* background-color: #2C313A66; */
+    background-color: #2C313A;
+    border-bottom: 2px solid white;
+}
+
+/* #endregion Tabs css */
 
 /* #region textarea css */
 .editor-container {
@@ -64,7 +89,7 @@
     height: 100%;
     border: none;
     outline: none;
-    background-color: antiquewhite;
+    background-color: #2C313C;
     font-size: 24px;
     padding: 20px;
     display: none;
@@ -77,4 +102,4 @@
     display: block;
 }
 
-/* #region Utility css end */
+/* #endregion Utility css end */
