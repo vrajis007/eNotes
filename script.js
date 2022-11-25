@@ -72,7 +72,7 @@ function renameTab (fname) {
     activeTab = activeTab.split('-')[1];
     let activeTabHead = document.getElementById(activeTab);
     if (activeTabHead.innerHTML != fname) {
-        activeTabHead.innerHTML = fname
+        activeTabHead.innerHTML = fname;
     }
 }
 
@@ -111,13 +111,14 @@ editor_div.addEventListener('focusout', () => {
 
     if (editor != '' && editor != 'Click Here to add new data') {
         localStorage.setItem(file, editor);
+        currentFileName = file;
     }
 });
 
 //2. Rename 
 fileName.addEventListener('focusout', () => {
-    console.log(currentFileName);
     let fname = (fileName.value).trim()
+    console.log(currentFileName, fname);
     renameTab(fname);
     if (!fileExist(currentFileName) && fname != currentFileName) {
         localStorage.setItem(fname, getEditorData(currentFileName));
@@ -129,8 +130,12 @@ fileName.addEventListener('focusout', () => {
 //3. get fileNames
 function getFileNames () {
     let data = Object.entries(localStorage);
-    for (const i in data) {
-        tabs.push(data[i][0]);
+    if (data.length != 0) {
+        for (const i in data) {
+            tabs.push(data[i][0]);
+        }
+    } else {
+        tabs.push('untitled')
     }
 }
 
