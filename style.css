@@ -6,7 +6,7 @@
 }
 
 .container {
-    height: 100vh;
+    height: 100%;
     display: flex;
     flex-direction: column;
 }
@@ -14,7 +14,8 @@
 /* #region Header CSS */
 .header {
     padding-left: 20px;
-    flex-basis: 10%;
+    /* flex-basis: 10%; */
+    height: 60px;
     background-color: #2C313C;
 }
 
@@ -23,7 +24,6 @@
     width: 250px;
     font-size: 36px;
     font-weight: 900;
-    /* padding-left: 10px; */
     border: none;
     outline: none;
 }
@@ -41,11 +41,9 @@
 /* #region Tabs CSS */
 
 .tabs-container {
-    padding-left: 20px;
     height: 40px;
-    width: 100%;
-    /* display: flex; */
-    display: inline;
+    padding-left: 20px;
+    display: flex;
     background-color: #282C34;
     overflow-x: auto;
     overflow-y: hidden;
@@ -53,7 +51,6 @@
 }
 
 .cirlce-container {
-    display: inline;
     width: 30px;
     height: 30px;
     background-color: #282C34;
@@ -73,9 +70,6 @@
     background-color: #404550;
 }
 
-.tabs-container .tabs {
-    display: inline;
-}
 
 .tabs button {
     padding: 10px;
@@ -103,7 +97,8 @@
 
 /* #region textarea css */
 .editor-container {
-    flex-basis: 90%;
+    height: 800px;
+    overflow: auto;
 }
 
 .editor {
@@ -118,6 +113,17 @@
 }
 
 /* #endregion textarea css end */
+
+/* #region footer */
+footer {
+    text-align: center;
+    height: 30px;
+    font-size: 24px;
+    color: white;
+}
+
+/* #endregion footer */
+
 
 /* #region Utility css */
 .active {
