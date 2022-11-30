@@ -19,7 +19,6 @@
     background-color: #2C313C;
 }
 
-
 .header input {
     width: 250px;
     font-size: 36px;
@@ -46,13 +45,10 @@
     padding-left: 20px;
     display: flex;
     background-color: #282C34;
-    overflow-x: auto;
-    overflow-y: hidden;
-    white-space: nowrap;
 }
 
 .cirlce-container {
-    width: 30px;
+    min-width: 30px;
     height: 30px;
     background-color: #282C34;
     color: white;
@@ -71,6 +67,15 @@
     background-color: #404550;
 }
 
+.tabs {
+    overflow-x: hidden;
+    overflow-y: hidden;
+    white-space: nowrap;
+}
+
+.tabs:hover {
+    overflow-x: auto;
+}
 
 .tabs button {
     padding: 10px;
@@ -123,8 +128,19 @@
 
 
 /* #region Utility css */
+
 .active {
     display: block;
+}
+
+/* horizontal Scrollbar CSS */
+.tabs-container ::-webkit-scrollbar {
+    background-color: #282C34;
+    height: 3px;
+}
+
+.tabs-container ::-webkit-scrollbar-thumb {
+    background-color: rgba(158, 167, 187, 0.3);
 }
 
 /* #endregion Utility css end */
