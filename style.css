@@ -133,6 +133,11 @@
     display: block;
 }
 
+.activeTabHead {
+    background-color: white;
+    border-bottom: 1px solid white;
+}
+
 /* horizontal Scrollbar CSS */
 .tabs-container ::-webkit-scrollbar {
     background-color: #282C34;

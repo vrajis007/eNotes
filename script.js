@@ -27,6 +27,11 @@ function createTabs () {
 function createTabHead (id, data) {
     let button = document.createElement('button');
     button.id = id;
+    if (id == 1) {
+        button.className = 'activeTabHead';
+        button.style.borderBottom = '1px solid white';
+        button.style.backgroundColor = '#2C313A';
+    }
     button.innerHTML = data;
     return button;
 }
@@ -97,6 +102,7 @@ function displayTabs (e) {
     document.getElementById("editor-" + e.target.id).classList.add('active');
     fileName.value = e.target.innerHTML;
     currentFileName = fileName.value;
+    setActiveTabCSS();
 }
 
 // #endregion -------------------------
@@ -166,3 +172,18 @@ function reset () {
 }
 
 // #endregion --------------------
+
+function setActiveTabCSS () {
+    // Removing previous tab head css.
+    let activeTabHead = document.querySelector('.activeTabHead');
+    activeTabHead.style.borderBottom = '1px solid #282C34';
+    activeTabHead.style.backgroundColor = '#282C34';
+    activeTabHead.classList.remove('activeTabHead');
+
+    // Adding css
+    let id = document.querySelector('.active').id.split('-')[1];
+    activeTabHead = document.getElementById(id);
+    activeTabHead.classList.add('activeTabHead');
+    activeTabHead.style.borderBottom = '1px solid #fff';
+    activeTabHead.style.backgroundColor = '#2C313A';
+}
