@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     background-color: #2C313C;
+    font-family: 'Roboto', sans-serif;
 }
 
 .container {
@@ -55,9 +56,8 @@ input:focus {
     font-weight: 900;
     border-radius: 50%;
     text-align: center;
-    margin-top: 6px;
+    margin-top: 7px;
     margin-right: 5px;
-    padding-top: 2px;
     cursor: pointer;
     user-select: none;
 }
@@ -118,6 +118,7 @@ input:focus {
     border: none;
     outline: none;
     background-color: #2C313C;
+    color: white;
     font-size: 24px;
     padding: 20px;
     display: none;
