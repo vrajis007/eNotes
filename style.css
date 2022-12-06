@@ -3,7 +3,8 @@
     padding: 0;
     box-sizing: border-box;
     background-color: #2C313C;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Source Code Pro', monospace;
+
 }
 
 .container {
@@ -15,19 +16,19 @@
 
 /* #region Header CSS */
 .header {
-    flex: 0 0 60px;
+    flex: 0 0 75px;
     padding: 5px 10px;
+    margin: 5px 2px;
     background-color: #2C313C;
 }
 
 .header input {
-    /* width: 200px; */
     font-size: 36px;
     font-weight: 900;
     color: white;
-    /* padding: 5px; */
     border: none;
     outline: none;
+    padding: 3px;
 }
 
 .header input:hover,
