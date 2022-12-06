@@ -44,14 +44,10 @@ function createEditor (id) {
     editor.id = `editor-${id + 1}`;
     editor.innerHTML = getEditorData(tabs[id]);
 
-    if (id == 0) fileName.value = tabs[id];
-
-    // if (newTab) {
-    //     fileName.value = tabs[id];
-    // } else {
-    //     editor.innerHTML = getEditorData(tabs[id]);
-    // }
-
+    if (id == 0) {
+        fileName.value = tabs[id];
+        changeWidth();
+    }
     return editor;
 }
 
@@ -79,6 +75,7 @@ function renameTab (fname) {
     if (activeTabHead.innerHTML != fname) {
         activeTabHead.innerHTML = fname;
     }
+    changeWidth();
 }
 
 // #endregion -----------------------------------
@@ -103,6 +100,7 @@ function displayTabs (e) {
     fileName.value = e.target.innerHTML;
     currentFileName = fileName.value;
     setActiveTabCSS();
+    changeWidth();
 }
 
 // #endregion -------------------------
@@ -188,8 +186,21 @@ function setActiveTabCSS () {
 // #endregion --------------------
 
 // #region CSS editing Functions:
-function increaseLength (e) {
-    if (e.offsetWidth < 600)
+function increaseWidth (e) {
+    if (e.offsetWidth < 600) {
         e.style.width = 200 + ((e.value.length + 1) * 8) + 'px';
+        // e.style.width = (e.value.length + 1) + 'ch';
+    }
+}
+
+function changeWidth () {
+    console.log(fileName.value.length);
+    if (fileName.value.length < 10) {
+        fileName.style.width = 200 + 'px';
+    } else if (fileName.value.length > 46) {
+        fileName.style.width = 600 + 'px';
+    } else {
+        fileName.style.width = (fileName.value.length - 1) + 'ch';
+    }
 }
 // #endregion
