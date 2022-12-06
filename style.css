@@ -15,24 +15,23 @@
 /* #region Header CSS */
 .header {
     flex: 0 0 60px;
-    padding-left: 20px;
+    padding: 5px 10px;
     background-color: #2C313C;
 }
 
 .header input {
-    width: 250px;
+    width: 200px;
     font-size: 36px;
     font-weight: 900;
+    color: white;
+    padding: 5px;
     border: none;
     outline: none;
 }
 
-.header input:hover {
-    border: 2px solid black;
-}
-
-.header input:focus {
-    border: 2px solid black;
+.header input:hover,
+input:focus {
+    border: 2px solid white;
 }
 
 /* #endregion Header CSS End */

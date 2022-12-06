@@ -124,7 +124,6 @@ editor_div.addEventListener('focusout', () => {
 //2. Rename 
 fileName.addEventListener('focusout', () => {
     let fname = (fileName.value).trim()
-    console.log(currentFileName, fname);
     renameTab(fname);
     if (!fileExist(currentFileName) && fname != currentFileName) {
         localStorage.setItem(fname, getEditorData(currentFileName));
@@ -171,8 +170,7 @@ function reset () {
     editor_div.innerHTML = "";
 }
 
-// #endregion --------------------
-
+// 2. set css of current tab head.
 function setActiveTabCSS () {
     // Removing previous tab head css.
     let activeTabHead = document.querySelector('.activeTabHead');
@@ -187,3 +185,11 @@ function setActiveTabCSS () {
     activeTabHead.style.borderBottom = '1px solid #fff';
     activeTabHead.style.backgroundColor = '#2C313A';
 }
+// #endregion --------------------
+
+// #region CSS editing Functions:
+function increaseLength (e) {
+    if (e.offsetWidth < 600)
+        e.style.width = 200 + ((e.value.length + 1) * 8) + 'px';
+}
+// #endregion
