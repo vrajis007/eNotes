@@ -118,8 +118,8 @@ editor_div.addEventListener('focusout', () => {
         currentFileName = file;
 
         // Show Success Message
+        showMessage();
     }
-    showMessage();
 });
 
 //2. Rename 
