@@ -17,9 +17,17 @@
 /* #region Header CSS */
 .header {
     flex: 0 0 75px;
+    display: flex;
+    align-items: center;
     padding: 5px 10px;
     margin: 5px 2px;
     background-color: #2C313C;
+}
+
+.header .logo {
+    height: 50px;
+    width: 50px;
+    margin-right: 10px;
 }
 
 .header input {
@@ -34,6 +42,22 @@
 .header input:hover,
 input:focus {
     border: 2px solid white;
+}
+
+.header .message {
+    display: none;
+    align-items: center;
+    color: white;
+    font-size: 20px;
+    margin-left: 5px;
+    font-weight: 500;
+    animation: fadeInOut 1s;
+}
+
+.header .message img {
+    height: 30px;
+    width: 30px;
+    margin-right: 5px;
 }
 
 /* #endregion Header CSS End */
@@ -150,3 +174,23 @@ input:focus {
 }
 
 /* #endregion Utility css end */
+
+
+/* #region Animations */
+@keyframes fadeInOut {
+
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1
+    }
+
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+/* #endregion Animations */

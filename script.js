@@ -116,7 +116,10 @@ editor_div.addEventListener('focusout', () => {
     if (editor != '' && editor != 'Click Here to add new data') {
         localStorage.setItem(file, editor);
         currentFileName = file;
+
+        // Show Success Message
     }
+    showMessage();
 });
 
 //2. Rename 
@@ -125,7 +128,6 @@ fileName.addEventListener('focusout', () => {
     renameTab(fname);
     let editor = document.querySelector('.active').innerHTML;
     if (!fileExist(currentFileName) && fname != currentFileName && editor != '') {
-        console.log('here--1', currentFileName)
         localStorage.setItem(fname, getEditorData(currentFileName));
         localStorage.removeItem(currentFileName);
         currentFileName = fname;
@@ -197,7 +199,6 @@ function increaseWidth (e) {
 }
 
 function changeWidth () {
-    console.log(fileName.value.length);
     if (fileName.value.length < 10) {
         fileName.style.width = 200 + 'px';
     } else if (fileName.value.length > 46) {
@@ -206,4 +207,12 @@ function changeWidth () {
         fileName.style.width = (fileName.value.length + 1) + 'ch';
     }
 }
-// #endregion
+
+function showMessage () {
+    let message = document.getElementById('message');
+    message.style.display = 'flex';
+    setTimeout(() => {
+        message.style.display = 'none';
+    }, 900);
+}
+// #endregion   
