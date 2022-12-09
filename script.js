@@ -117,6 +117,7 @@ editor_div.addEventListener('focusout', () => {
         localStorage.setItem(file, editor);
         currentFileName = file;
 
+        getFileNames();
         // Show Success Message
         showMessage();
     }
@@ -136,6 +137,7 @@ fileName.addEventListener('focusout', () => {
 
 //3. get fileNames
 function getFileNames () {
+    tabs = []
     let data = Object.entries(localStorage);
     if (data.length != 0) {
         for (const i in data) {
