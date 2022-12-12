@@ -72,6 +72,14 @@ input:focus {
     background-color: #282C34;
 }
 
+.delete-btn {
+    display: none;
+    height: 20px;
+    width: 20px;
+    align-self: center;
+    cursor: pointer;
+}
+
 .cirlce-container {
     min-width: 30px;
     height: 30px;
@@ -95,13 +103,16 @@ input:focus {
     overflow-x: hidden;
     overflow-y: hidden;
     white-space: nowrap;
+    display: flex;
 }
 
 .tabs:hover {
     overflow-x: auto;
 }
 
-.tabs button {
+.tabs div {
+    display: flex;
+    justify-content: space-between;
     padding: 10px;
     border: none;
     background-color: #282C34;
@@ -111,20 +122,18 @@ input:focus {
     letter-spacing: 1px;
     font-size: 18px;
     cursor: pointer;
+    position: relative;
 }
 
-.tabs button:first-of-type {
+.tabs div:first-of-type {
     border-left: 1px solid black;
 }
 
-.tabs button:hover {
-    /* background-color: #21252B; */
-    /* background-color: #2C313A66; */
+.tabs div:hover {
     background-color: #2C313A;
-    border-bottom: 1px solid white;
 }
 
-.tabs button:focus {
+.tabs div:focus {
     border-bottom: 2px solid white;
 }
 
