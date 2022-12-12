@@ -18,6 +18,21 @@
 </head>
 
 <body>
+    <!-- Modal Container -->
+    <div id="deleteModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+        <span class="close" onclick="closeModal();">&times;</span>
+        <h2>Are you sure you want to delete ?</h2>
+        <div class='modal-btns'>
+            <button onclick="deleteTab();">Delete</button>
+            <button onclick="closeModal();">Cancel</button>
+        </div>
+        </div>
+  
+  </div>
+
     <div class="container">
         <div class="header">
             <img class="logo" src="assets/logo.png" alt="logo">

@@ -162,15 +162,7 @@ fileName.addEventListener('focusout', () => {
 
 // 3. Delete
 document.getElementById('delete').addEventListener('click', () => {
-    // shift the delete button.
-    resetDeleteBtn();
-
-    // Delete the file
-    let tabHeadId = document.querySelector('.active').id.split('-')[1];
-    let fname = document.getElementById(tabHeadId).innerText;
-    localStorage.removeItem(fname);
-    reset();
-    init();
+    document.getElementById('deleteModal').style.display = 'block';
 });
 
 //4. get fileNames
@@ -196,6 +188,23 @@ function fileExist (fname) {
     return localStorage.getItem(fname) === null;
 }
 
+function deleteTab () {
+    // shift the delete button.
+    resetDeleteBtn();
+
+    // Delete the file
+    let tabHeadId = document.querySelector('.active').id.split('-')[1];
+    let fname = document.getElementById(tabHeadId).innerText;
+    localStorage.removeItem(fname);
+    reset();
+    init();
+
+    closeModal();
+}
+
+function closeModal () {
+    document.getElementById('deleteModal').style.display = 'none';
+}
 // #endregion --------------------
 
 
